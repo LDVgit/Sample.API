@@ -42,7 +42,8 @@ namespace Sample.API
             services.AddDbContext<ApiContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<IEmployee,EmployeeService>();            
+            services.AddScoped<IEmployee, EmployeeService>();
+            services.AddScoped<ISpecialty, SpecialtyService>();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

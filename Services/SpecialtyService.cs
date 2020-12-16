@@ -40,10 +40,11 @@ namespace Sample.API.Services
             _ctx.SaveChanges();
         }
 
-        public void RemoveSpecialty(Specialty sp)
+        public void RemoveSpecialty(int id)
         {
-            if(ExistSpecialty(sp.Id))
+            if(ExistSpecialty(id))
             {
+                var sp = GetSpecialtyById(id);
                 _ctx.Specialties.Remove(sp);
                 _ctx.SaveChanges();
             }
